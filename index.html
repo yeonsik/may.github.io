@@ -1,8 +1,26 @@
 <html>
+  <head>
+    <script type="text/javascript" charset="UTF-8">
+      function callNative(){
+        try {
+          webkit.messageHandlers.callbackHandler.postMessage("MessageBody");
+        }catch(err){
+          alert(err)
+        }
+      }
+      
+      function redHeader(){
+        document.querySelector('h1').style.color = "red";
+      }
+    </script>
+  </head>
   <body>
-    <h1>Hello</h1>
+    <h1>OTA Test</h1>
     
     <br/>
     <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/merrymay/may.github.io/master/manifest.plist">Download App</a>
+  
+    <br/>
+    <input type="button" onClick="callnative()" value="Call Native"/>
   </body>
 </html>
