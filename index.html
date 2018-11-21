@@ -1,9 +1,9 @@
 <html>
   <head>
-    <script src="/public/js/jquery-3.1.1.js"/>
-    
+     
     <script type="text/javascript" charset="UTF-8">
       function callNative(){
+        alert("call native from js");
         try {
           webkit.messageHandlers.callbackHandler.postMessage("MessageBody");
         }catch(err){
@@ -12,7 +12,8 @@
       }
       
       function redHeader(){
-        document.querySelector('h1').style.color = "red";
+        alert("redHeader! js called from native on document load");
+        //document.querySelector('h1').style.color = "red";
       }
     </script>
   </head>
