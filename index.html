@@ -7,7 +7,7 @@
       function callNative(){
         alert("call native from js");
         try {
-          webkit.messageHandlers.callbackHandler.postMessage("MessageBody");
+           window.webkit.messageHandlers.callbackHandler.postMessage("MessageBody");
         }catch(err){
           alert(err);
         }
