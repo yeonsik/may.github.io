@@ -34,5 +34,16 @@
     <br/>
     <br/>
     <input type="button" onClick="javascript:callNative();" value="Call Native"/>
+    
+    
+    <!-- Test code for Android Kotlin Sample -->
+    <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+
+<script type="text/javascript">
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
+    }
+</script>
+    
   </body>
 </html>
