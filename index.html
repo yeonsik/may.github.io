@@ -37,11 +37,17 @@
     
     
     <!-- Test code for Android Kotlin Sample -->
-    <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
-
+    <br/>
+    <br/>
+    <input type="button" value="Show native's toast message!" onClick="showAndroidToast('Hello Android!')" />
+    <br/>
+    
 <script type="text/javascript">
     function showAndroidToast(toast) {
         Android.showToast(toast);
+    }
+    function showWebAlertFromNative(){
+        alert("Js called from native!!");
     }
 </script>
     
