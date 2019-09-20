@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+    <script type="text/javascript" charset="UTF-8">
+      function callNative(){
+        //alert("call native from js");
+        try {
+           window.webkit.messageHandlers.callbackHandler.postMessage("MessageBody");
+        }catch(err){
+          alert(err);
+        }
+      }
+      
+      function redHeader(){
+        alert("redHeader! js called from native on document load");
+        //document.querySelector('h1').style.color = "red";
+      }
+      
+      function jsCalledFromNative(){
+        alert("Js called from native!!");
+      }
+    </script>
+  </head>
+  
+  <body>
+    <!--img src="https://familybox-dev.kt.com/ktFamily-s2/static/story/images/samples/sample2.png" alt="" /-->
+    <h1>OTA Test</h1>
+    
+    <br/>
+    <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/merrymay/may.github.io/master/manifest.plist">Download App</a>
+    
+    <br/>
+    <br/>
+    <input type="button" onClick="javascript:callNative();" value="Call Native!"/>
+    
+    
+    <!-- Test code for Android Kotlin Sample -->
+    <br/>
+    <br/>
+    <input type="button" value="Show native's toast message!" onClick="showAndroidToast('Hello Android!')" />
+    <br/>
+    
+<script type="text/javascript">
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
+    }
+    function showWebAlertFromNative(){
+        alert("Js called from native!!");
+    }
+</script>
+    
+    <!-- Test code to open multiple window within webview -->
+    <br/>
+    <br/>
+    <br/>
+    <!--input type="button" value="Open new window!" onClick="window.open('https://apple.com')" /-->
+    <a href="https://merrymay.github.io/may.github.io/index.html" target="_blank">Target blank!</a>
+    <br/>
+    <a href="javascript:window.open('https://merrymay.github.io/may.github.io/index.html')" target="_blank">Window.open!</a>
+    <br/>
+    <br/>
+    <a href="javascript:window.close()" target="_blank">Window.close!</a>
+<br/>
+    <br/>
+    <a href="skcchealthcare://leadgen?aiacampid=12345">AIA 바이탈리티 앱링크 테스트용</a>
+    
+    <br/>
+<a href="skcchealthcare://landing?code=WEB_01$http://www.google.com">외부 웹화면</a>
+ <br/>
+<a href="skcchealthcare://landing?code=WEB_02$/setup/faq/list">SPA 내부 웹화면</a>
+ <br/>
+
+<a href="skcchealthcare://landing?code=AC_2_01$directInsurance"> 바이탈리티 다이렉트 (활동)</a>
+ <br/>
+
+<a href="skcchealthcare://landing?code=MY_2_01$directInsurance">바이탈리티 다이렉트 (나)</a>
+ <br/>
+
+     <br/>
+    <a href="skcchealthcare://landing?code=WEB_02$/terms/gradeReward?popup=true%26backwardPage=landing>동의하기</a>
+  </body>
+</html>
