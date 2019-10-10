@@ -1,3 +1,0 @@
-#Basics
-##Android Developer Guide
-
