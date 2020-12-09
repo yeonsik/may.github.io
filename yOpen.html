@@ -1,61 +1,64 @@
-<script>
-function mo_chk(){
 
-	var os;
-
-	var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));	 
-
-	if (mobile) {
-		var userAgent = navigator.userAgent.toLowerCase();
-		if (userAgent.search("android") > -1){
-			return os = "android";
-		}else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)){
-			return os = "ios";
-		}else{
-			return os = "otehr";
-		}
-
-	} else {
-		return os = "pc";
-	}
-}
-
-
-function action_app_instagram(android_url , ios_url , ios_appstore_url){
-	var result_mo_chk = mo_chk();
-
-	if(result_mo_chk!="pc"){
-		if(result_mo_chk == "ios"){
-// 			setTimeout( function () {
-// 					if ( ( new Date() ).getTime() - visitedAt < 2000 ) {
-// 						window.open(ios_appstore_url);
-// 					}
-// 				} ,500 );
-// 				setTimeout( function () {
-// 					location.href = ios_url;
-// 				} ,0 );
-			
-			setTimeout( function() {
-				window.open(ios_appstore_url);
-			}, 1500);
-
-			window.open(ios_url);//location.href = ios_url;
-		}else{
-			location.href = android_url;
-		}
-	}
-}
-</script>
 
 
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
-<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<script>
+		function mo_chk(){
+
+			var os;
+
+			var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));	 
+
+			if (mobile) {
+				var userAgent = navigator.userAgent.toLowerCase();
+				if (userAgent.search("android") > -1){
+					return os = "android";
+				}else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)){
+					return os = "ios";
+				}else{
+					return os = "otehr";
+				}
+
+			} else {
+				return os = "pc";
+			}
+		}
+
+
+		function action_app_instagram(android_url , ios_url , ios_appstore_url){
+			var result_mo_chk = mo_chk();
+
+			if(result_mo_chk!="pc"){
+				if(result_mo_chk == "ios"){
+		// 			setTimeout( function () {
+		// 					if ( ( new Date() ).getTime() - visitedAt < 2000 ) {
+		// 						window.open(ios_appstore_url);
+		// 					}
+		// 				} ,500 );
+		// 				setTimeout( function () {
+		// 					location.href = ios_url;
+		// 				} ,0 );
+
+					setTimeout( function() {
+						window.open(ios_appstore_url);
+					}, 1500);
+
+					window.open(ios_url);//location.href = ios_url;
+				}else{
+					location.href = android_url;
+				}
+			}
+		}
+</script>
+		
 	</head>
     <body<span onclick="action_app_instagram('intent://instagram.com/#Intent;package=com.instagram.android;scheme=https;end', 'yboxapp://ios', 'https://itunes.apple.com/kr/app/instagram/id1331731129?mt=8')">
-            <b> <br/><br/><br/><center><p><font size=16>yBox App 실행 *
+            <b> <br/><br/><br/><center><p><font size=16>--- yBox App 실행 *
         </span>
     </body>
 </html>
