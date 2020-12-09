@@ -26,11 +26,20 @@ function action_app_instagram(android_url , ios_url , ios_appstore_url){
 
 	if(result_mo_chk!="pc"){
 		if(result_mo_chk == "ios"){
-			setTimeout( function() {
-				window.open(ios_appstore_url);
-			}, 1500);
+			setTimeout( function () {
+					if ( ( new Date() ).getTime() - visitedAt < 2000 ) {
+						location.href = ios_appstore_url;
+					}
+				} ,500 );
+				setTimeout( function () {
+					location.href = ios_url;
+				} ,0 );
+			
+// 			setTimeout( function() {
+// 				window.open(ios_appstore_url);
+// 			}, 1500);
 
-			location.href = ios_url;
+// 			location.href = ios_url;
 		}else{
 			location.href = android_url;
 		}
