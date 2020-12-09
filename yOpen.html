@@ -26,20 +26,20 @@ function action_app_instagram(android_url , ios_url , ios_appstore_url){
 
 	if(result_mo_chk!="pc"){
 		if(result_mo_chk == "ios"){
-			setTimeout( function () {
-					if ( ( new Date() ).getTime() - visitedAt < 2000 ) {
-						window.open(ios_appstore_url);
-					}
-				} ,500 );
-				setTimeout( function () {
-					location.href = ios_url;
-				} ,0 );
+// 			setTimeout( function () {
+// 					if ( ( new Date() ).getTime() - visitedAt < 2000 ) {
+// 						window.open(ios_appstore_url);
+// 					}
+// 				} ,500 );
+// 				setTimeout( function () {
+// 					location.href = ios_url;
+// 				} ,0 );
 			
-// 			setTimeout( function() {
-// 				window.open(ios_appstore_url);
-// 			}, 1500);
+			setTimeout( function() {
+				window.open(ios_appstore_url);
+			}, 1500);
 
-// 			location.href = ios_url;
+			location.href = ios_url;
 		}else{
 			location.href = android_url;
 		}
@@ -49,8 +49,8 @@ function action_app_instagram(android_url , ios_url , ios_appstore_url){
 
 
 <html>
-    <body<span onclick="action_app_instagram('intent://instagram.com/#Intent;package=com.instagram.android;scheme=https;end', 'yboxapp://ios', 'itms-apps://itunes.apple.com/developer/id463855590')">
-            <b> <p>yBox App 실행 
+    <body<span onclick="action_app_instagram('intent://instagram.com/#Intent;package=com.instagram.android;scheme=https;end', 'yboxapp://ios', 'https://apps.apple.com/kr/app/y%EB%B0%95%EC%8A%A4/id1331731129')">
+            <b> <br><center><p>yBox App 실행 
         </span>
     </body>
 </html>
