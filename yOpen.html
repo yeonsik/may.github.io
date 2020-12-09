@@ -26,9 +26,7 @@ function action_app_instagram(android_url , ios_url , ios_appstore_url){
 
 	if(result_mo_chk!="pc"){
 		if(result_mo_chk == "ios"){
-			var now = new Date().valueOf();
 			setTimeout( function() {
-				if (new Date().valueOf() - now > 100) return;
 				window.open(ios_appstore_url);
 			}, 1500);
 
