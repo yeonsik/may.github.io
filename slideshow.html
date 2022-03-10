@@ -1,8 +1,29 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
 
 <style>
+	<!--     // iOS 11.0 버전-->
+<!--    constant(safe-area-inset-top)-->
+<!--    constant(safe-area-inset-right)-->
+<!--    constant(safe-area-inset-bottom)-->
+<!--    constant(safe-area-inset-left)-->
+<!--    // iOS 11.2 이상-->
+<!--    env(safe-area-inset-top)-->
+<!--    env(safe-area-inset-right)-->
+<!--    env(safe-area-inset-bottom)-->
+<!--    env(safe-area-inset-left)-->
+/* 코딩한 body에 추가 */
+body {
+padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+padding-top: env(safe-area-inset-top); /* iOS 11.2 */ }
+/* 코딩한 footer에 추가 */
+.footer {
+ padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+ padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */ }
+
+	
 /* Slideshow container */
 .slideshow-container {
   max-width: 1440px;
