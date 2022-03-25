@@ -52,6 +52,7 @@ function setUserProperty(name, value) {
 }
   
   function showAppLogin(){
+    console.log("show App Login!!!");
     if (window.AnalyticsWebInterface) {
     // Call Android interface
     window.AnalyticsWebInterface.setUserProperty(name, value);
@@ -59,7 +60,8 @@ function setUserProperty(name, value) {
       && window.webkit.messageHandlers
       && window.webkit.messageHandlers.yShopCallback) {
     // Call iOS interface
-    
+        console.log(">>>requestAppLogin");
+
     window.webkit.messageHandlers.yShopCallback.postMessage('requestAppLogin');
   } else {
     // No Android or iOS interface found
