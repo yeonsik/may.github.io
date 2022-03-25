@@ -61,8 +61,12 @@ function setUserProperty(name, value) {
       && window.webkit.messageHandlers.yShopCallback) {
     // Call iOS interface
         console.log(">>>requestAppLogin");
-
-    window.webkit.messageHandlers.yShopCallback.postMessage('requestAppLogin');
+var message = {
+      command: 'requestAppLogin',
+      name: name,
+      value: value
+   };
+    window.webkit.messageHandlers.yShopCallback.postMessage(message);
   } else {
     // No Android or iOS interface found
     console.log("No native APIs found.");
