@@ -50,11 +50,33 @@ function setUserProperty(name, value) {
 
 
 }
+  
+  function showAppLogin(){
+    if (window.AnalyticsWebInterface) {
+    // Call Android interface
+    window.AnalyticsWebInterface.setUserProperty(name, value);
+  } else if (window.webkit
+      && window.webkit.messageHandlers
+      && window.webkit.messageHandlers.yShopCallback) {
+    // Call iOS interface
+    
+    window.webkit.messageHandlers.yShopCallback.postMessage('requestAppLogin');
+  } else {
+    // No Android or iOS interface found
+    console.log("No native APIs found.");
+  }
+
+  }
 
 </script>
 </head>
 <body>
 <h1>Firebase Analytics Test</h1>
 <a href="javascript:logEvent('test 00','{\"a\":1234}')">Send Sample Data</a>
+<br/><br/>
+  <h1>Login Test</h1>
+
+  <a href="javascript:showAppLogin()">Show App Login</a>
+
 </body>
 </html>
