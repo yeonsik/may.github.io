@@ -53,20 +53,20 @@ function setUserProperty(name, value) {
   
   function showAppLogin(){
     console.log("show App Login!!!");
-    if (window.AnalyticsWebInterface) {
-    // Call Android interface
-    window.AnalyticsWebInterface.setUserProperty(name, value);
-  } else if (window.webkit
+    
+    if (window.YShopWebInterface) { 
+      // Call Android interface
+        
+    } else if (window.webkit
       && window.webkit.messageHandlers
       && window.webkit.messageHandlers.yShopCallback) {
-    // Call iOS interface
+      
+        // Call iOS interface
         console.log(">>>requestAppLogin");
-var message = {
-      command: 'requestAppLogin',
-      name: 'test',
-      value: 'test124'
-   };
-    window.webkit.messageHandlers.yShopCallback.postMessage(message);
+        var message = {
+            command: 'requestAppLogin' 
+        };
+        window.webkit.messageHandlers.yShopCallback.postMessage(message);
   } else {
     // No Android or iOS interface found
     console.log("No native APIs found.");
