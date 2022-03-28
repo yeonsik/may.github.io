@@ -56,6 +56,7 @@ function setUserProperty(name, value) {
     
     if (window.YShopWebInterface) { 
       // Call Android interface
+      window.YShopWebInterface.requestAppLogin();
         
     } else if (window.webkit
       && window.webkit.messageHandlers
